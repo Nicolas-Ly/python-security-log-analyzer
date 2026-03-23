@@ -1,0 +1,7 @@
+2026-03-15 10:01:22 client=192.168.1.10 query=google.com
+2026-03-15 10:01:23 client=192.168.1.10 query=google.com
+2026-03-15 10:01:25 client=192.168.1.10 query=google.com
+2026-03-15 10:01:30 client=192.168.1.15 query=malicious-domain.ru
+2026-03-15 10:01:32 client=192.168.1.15 query=malicious-domain.ru
+2026-03-15 10:01:40 client=192.168.1.22 query=github.com
+2026-03-15 10:01:50 client=192.168.1.22 query=strange-domain.xyz

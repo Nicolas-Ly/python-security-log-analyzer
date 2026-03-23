@@ -1,0 +1,5 @@
+2026-03-15 10:02:10 user=john url=http://example.com
+2026-03-15 10:02:15 user=john url=http://example.com/login
+2026-03-15 10:02:20 user=jane url=http://malicious-domain.ru/payload
+2026-03-15 10:02:30 user=jane url=http://malicious-domain.ru/payload
+2026-03-15 10:02:45 user=bob url=http://github.com

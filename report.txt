@@ -1,0 +1,11 @@
+Security Analysis Report
+------------------------
+DNS:
+------------------
+Suspicious DNS Query: malicious-domain.ru
+Suspicious DNS Query: strange-domain.xyz
+
+Proxy:
+------------------
+Malicious Proxy Traffic: http://malicious-domain.ru/payload
+Malicious Proxy Traffic: http://malicious-domain.ru/payload
