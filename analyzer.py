@@ -12,34 +12,46 @@ domains = []
 for line in dns_file:
     # used to split lines in dns file
     parts = line.split()
-    # gets the domain using parts variable to split specific parts of the list
-    domain = parts[3].split("=")[1]
-    #adds the found domain to domains list
-    domains.append(domain)
 
+    # gets the domain using parts variable to split specific parts of the list
+    dns_domain = parts[3].split("=")[1]
+    
+    #adds the found domain to domains list
+    domains.append(dns_domain)
+
+# closes dns file and counts domains
 dns_file.close()
-# gets the amount of the different domains
 counts = Counter(domains)
 
-# Domains to watch out for
-suspicious_domains = [
-   "malicious-domain.ru",
-   "strange-domain.xyz"
-]
+#--
+# stores the domains to watch out for
+suspicious_domains = []
 
+threat_file = open("logs/threat_feed.txt", "r")
+
+for line in threat_file:
+    threat_domain = line.strip()
+    if threat_domain:
+        suspicious_domains.append(threat_domain)
+threat_file.close()
+#--
 
 for domain, count in counts.items():
     print(domain,":", count)
 
-if any(domain in domains for domain in suspicious_domains):
-    for domain, count in counts.items():
-        if domain in suspicious_domains:
-            print("ALERT: Suspocious domain detected:", domain)
-        elif count > 3:
-            print("ALERT: Possible DNS beaconing:\n", domain)
-else:
-    print("No suspicious domains found.\n")
+found_suspicious = False
 
+for domain, count in counts.items():
+
+    if domain in suspicious_domains:
+        print("ALERT: Suspicious domain detected:", domain)
+        found_suspicious = True
+
+    if count > 3:
+        print("ALERT: Possible DNS beaconing:", domain)
+
+if not found_suspicious:
+    print("No suspicious domains found.\n")
 
 # -----------------------------------------------
 # Analyzing the proxy logs to detect malicious traffic
