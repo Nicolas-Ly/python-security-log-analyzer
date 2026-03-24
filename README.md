@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a beginner-friendly Python security lab that analyzes simulated DNS and proxy logs to detect suspicious domain activity, possible DNS beaconing, and malicious web traffic.
+This project is a personal Python security lab that analyzes simulated DNS and proxy logs to detect suspicious domain activity, possible DNS beaconing, and malicious web traffic.
 
 The goal of this project is to practice:
 
