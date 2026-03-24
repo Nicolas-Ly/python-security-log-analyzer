@@ -167,7 +167,7 @@ It reflects common tasks performed by:
 
 ## Notes
 
-This project uses simulated logs and hardcoded domains for learning.
+This project uses simulated logs and hardcoded domains for practice.
 
 ---
 
