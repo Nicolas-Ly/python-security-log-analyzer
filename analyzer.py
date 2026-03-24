@@ -6,6 +6,8 @@ proxy_file = open("logs/proxy.log", "r")
 
 # -----------------------------------------------
 # Analyzing the DNS logs for malicious domains
+# -----------------------------------------------
+
 # stores the domains
 domains = []
 
@@ -23,18 +25,24 @@ for line in dns_file:
 dns_file.close()
 counts = Counter(domains)
 
-#--
+#------------------------------------
 # stores the domains to watch out for
-suspicious_domains = []
+threat_feed = {}
 
+# Reads the threat file with bad domains
 threat_file = open("logs/threat_feed.txt", "r")
 
 for line in threat_file:
-    threat_domain = line.strip()
-    if threat_domain:
-        suspicious_domains.append(threat_domain)
+    line = line.strip()
+
+    if line:
+        parts = line.split(',')
+        threat_domain = parts[0]
+        severity = parts[1]
+        threat_feed[threat_domain] = severity
+
 threat_file.close()
-#--
+#-------------------------------------
 
 for domain, count in counts.items():
     print(domain,":", count)
@@ -43,8 +51,8 @@ found_suspicious = False
 
 for domain, count in counts.items():
 
-    if domain in suspicious_domains:
-        print("ALERT: Suspicious domain detected:", domain)
+    if domain in threat_feed:
+        print("ALERT: Suspicious domain detected:", domain, "| Severity:", threat_feed[domain])
         found_suspicious = True
 
     if count > 3:
@@ -55,10 +63,12 @@ if not found_suspicious:
 
 # -----------------------------------------------
 # Analyzing the proxy logs to detect malicious traffic
+# -----------------------------------------------
 
 print("\nNow analyzing Proxy Logs...")
 print("Logs Accessed:")
 
+# stores the urls from the proxy logs
 urls= []
 
 for line in proxy_file:
@@ -73,15 +83,15 @@ proxy_file.close()
 print("\nLooking for malicious traffic:")
 
 for url in urls:
-    for bad_domain in suspicious_domains:
+    for bad_domain in threat_feed:
         if bad_domain in url:
-            print("ALERT: Malicious proxy traffic:", url)
-
+            print("ALERT: Malicious proxy traffic:", url, "| Severity:", threat_feed[bad_domain])
 
 # -------------------------------------------
 # Writing dns and proxy findings to the report
+#--------------------------------------------
 report = open("report.txt", "w")
-
+report.write("------------------------\n")
 report.write("Security Analysis Report\n")
 report.write("------------------------\n")
 
@@ -89,15 +99,15 @@ report.write("------------------------\n")
 report.write("DNS:\n")
 report.write("------------------\n")
 for domain, count in counts.items():
-    if domain in suspicious_domains:
-        report.write(f"Suspicious DNS Query: {domain}\n")
+    if domain in threat_feed:
+        report.write(f"Suspicious DNS Query: {domain} | Severity: {threat_feed[domain]}\n")
 
 
 # Writing proxy findings
 report.write("\nProxy:\n")
 report.write("------------------\n")
 for url in urls:
-    for malicious in suspicious_domains:
-        if malicious in url:
-            report.write(f"Malicious Proxy Traffic: {url}\n")
+    for bad_url in threat_feed:
+        if bad_url in url:
+            report.write(f"Malicious Proxy Traffic: {url} | Severity: {threat_feed[bad_url]}\n")
 report.close

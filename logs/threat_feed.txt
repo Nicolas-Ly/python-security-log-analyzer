@@ -1,4 +1,4 @@
-malicious-domain.ru
-strange-domain.xyz
-evil-c2.net
-phishing-login.com
+malicious-domain.ru,high
+strange-domain.xyz,medium
+evil-c2.net,high
+phishing-login.com,low

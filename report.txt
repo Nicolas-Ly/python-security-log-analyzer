@@ -1,11 +1,13 @@
+------------------------
 Security Analysis Report
 ------------------------
 DNS:
 ------------------
-Suspicious DNS Query: malicious-domain.ru
-Suspicious DNS Query: strange-domain.xyz
+Suspicious DNS Query: malicious-domain.ru | Severity: high
+Suspicious DNS Query: strange-domain.xyz | Severity: medium
+Suspicious DNS Query: phishing-login.com | Severity: low
 
 Proxy:
 ------------------
-Malicious Proxy Traffic: http://malicious-domain.ru/payload
-Malicious Proxy Traffic: http://malicious-domain.ru/payload
+Malicious Proxy Traffic: http://malicious-domain.ru/payload | Severity: high
+Malicious Proxy Traffic: http://malicious-domain.ru/payload | Severity: high
