@@ -38,6 +38,7 @@ python-security-log-analyzer/
 └── logs/
     ├── dns.log
     └── proxy.log
+    └── threat_feed.txt
 ```
 
 ---
