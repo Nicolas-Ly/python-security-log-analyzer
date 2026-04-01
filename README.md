@@ -156,9 +156,9 @@ It reflects common tasks performed by:
 
 ## Future Improvements
 
-* Move suspicious domains to an external threat feed file
-* Add severity levels (low, medium, high)
-* Refactor into modular functions
+* Move suspicious domains to an external threat feed file (Now Implemented)
+* Add severity levels (low, medium, high) (Now Implemented)
+* Refactor into modular functions (Now Implemented)
 * Export results as JSON or CSV
 * Track client IPs and users
 * Integrate real threat intelligence APIs
