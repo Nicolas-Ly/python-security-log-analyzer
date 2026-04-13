@@ -78,11 +78,12 @@ python-security-log-analyzer/
 
 ## Detection Logic
 
-The script currently uses a simulated watchlist:
+The script currently uses a simulated watchlist within a file called threat_feed.txt:
 
 ```
 malicious-domain.ru
 strange-domain.xyz
+...
 ```
 
 These are used to:
