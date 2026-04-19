@@ -2,11 +2,38 @@ Security Analysis Report
 ------------------------
 DNS:
 ------------------------
-Suspicious DNS Query:malicious-domain.ru | Severity: high
-Suspicious DNS Query:strange-domain.xyz | Severity: medium
-Suspicious DNS Query:phishing-login.com | Severity: low
+Client: 192.168.1.15 Queried: malicious-domain.ru | Severity: high
+Client: 192.168.1.15 Queried: malicious-domain.ru | Severity: high
+Client: 192.168.1.15 Queried: evil-c2.net | Severity: high
+Client: 192.168.1.15 Queried: evil-c2.net | Severity: high
+Client: 192.168.1.15 Queried: evil-c2.net | Severity: high
+Client: 192.168.1.15 Queried: evil-c2.net | Severity: high
+Client: 192.168.1.30 Queried: phishing-login.com | Severity: low
+Client: 192.168.1.30 Queried: phishing-login.com | Severity: low
+Client: 192.168.1.30 Queried: phishing-login.com | Severity: low
+Client: 192.168.1.30 Queried: strange-domain.xyz | Severity: medium
+Client: 192.168.1.30 Queried: strange-domain.xyz | Severity: medium
+Possible DNS Beaconing: evil-c2.net
+Possible DNS Beaconing: cdn.safe-site.com
+Possible DNS Beaconing: data-exfil.ru
+Possible DNS Beaconing: beacon-c2.xyz
+Possible DNS Beaconing: update-server.net
 
-Proxy
+Proxy:
 ------------------------
-Malicious Proxy Traffic: http://malicious-domain.ru/payload | Severity: high
-Malicious Proxy Traffic: http://malicious-domain.ru/payload | Severity: high
+User: jane Accessed: http://malicious-domain.ru/payload | Severity: high
+User: jane Accessed: http://malicious-domain.ru/payload | Severity: high
+User: jane Accessed: http://malicious-domain.ru/payload | Severity: high
+User: jane Accessed: http://malicious-domain.ru/download.exe | Severity: high
+User: jane Accessed: http://evil-c2.net/beacon | Severity: high
+User: jane Accessed: http://evil-c2.net/beacon | Severity: high
+User: jane Accessed: http://evil-c2.net/beacon | Severity: high
+User: jane Accessed: http://evil-c2.net/beacon | Severity: high
+User: mike Accessed: http://strange-domain.xyz/gate.php | Severity: medium
+User: mike Accessed: http://strange-domain.xyz/gate.php | Severity: medium
+User: mike Accessed: http://strange-domain.xyz/gate.php | Severity: medium
+User: mike Accessed: http://strange-domain.xyz/upload | Severity: medium
+User: mike Accessed: http://strange-domain.xyz/upload | Severity: medium
+User: john Accessed: http://phishing-login.com/secure/account | Severity: low
+User: john Accessed: http://phishing-login.com/secure/account | Severity: low
+User: john Accessed: http://phishing-login.com/secure/verify | Severity: low

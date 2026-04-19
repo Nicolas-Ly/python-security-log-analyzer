@@ -1,0 +1,201 @@
+{
+    "dns_counts": {
+        "google.com": 3,
+        "youtube.com": 2,
+        "malicious-domain.ru": 2,
+        "evil-c2.net": 4,
+        "github.com": 1,
+        "stackoverflow.com": 1,
+        "docs.python.org": 1,
+        "npmjs.com": 1,
+        "phishing-login.com": 3,
+        "strange-domain.xyz": 2,
+        "cdn.safe-site.com": 4,
+        "microsoft.com": 1,
+        "office365.com": 1,
+        "outlook.com": 1,
+        "data-exfil.ru": 5,
+        "amazon.com": 1,
+        "aws.amazon.com": 1,
+        "s3.amazonaws.com": 1,
+        "beacon-c2.xyz": 6,
+        "slack.com": 1,
+        "zoom.us": 1,
+        "teams.microsoft.com": 1,
+        "update-server.net": 4,
+        "cloudflare.com": 1,
+        "1.1.1.1.cdn.cloudflare.com": 1,
+        "dropbox.com": 1,
+        "drive.google.com": 1,
+        "suspicious-payload.top": 3,
+        "reddit.com": 1,
+        "twitter.com": 1,
+        "linkedin.com": 1
+    },
+    "dns_alerts": [
+        {
+            "client": "192.168.1.15",
+            "domain": "malicious-domain.ru",
+            "severity": "high",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.15",
+            "domain": "malicious-domain.ru",
+            "severity": "high",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.15",
+            "domain": "evil-c2.net",
+            "severity": "high",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.15",
+            "domain": "evil-c2.net",
+            "severity": "high",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.15",
+            "domain": "evil-c2.net",
+            "severity": "high",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.15",
+            "domain": "evil-c2.net",
+            "severity": "high",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.30",
+            "domain": "phishing-login.com",
+            "severity": "low",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.30",
+            "domain": "phishing-login.com",
+            "severity": "low",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.30",
+            "domain": "phishing-login.com",
+            "severity": "low",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.30",
+            "domain": "strange-domain.xyz",
+            "severity": "medium",
+            "type": "dns"
+        },
+        {
+            "client": "192.168.1.30",
+            "domain": "strange-domain.xyz",
+            "severity": "medium",
+            "type": "dns"
+        }
+    ],
+    "proxy_alerts": [
+        {
+            "user": "jane",
+            "url": "http://malicious-domain.ru/payload",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://malicious-domain.ru/payload",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://malicious-domain.ru/payload",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://malicious-domain.ru/download.exe",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://evil-c2.net/beacon",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://evil-c2.net/beacon",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://evil-c2.net/beacon",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "jane",
+            "url": "http://evil-c2.net/beacon",
+            "severity": "high",
+            "type": "proxy"
+        },
+        {
+            "user": "mike",
+            "url": "http://strange-domain.xyz/gate.php",
+            "severity": "medium",
+            "type": "proxy"
+        },
+        {
+            "user": "mike",
+            "url": "http://strange-domain.xyz/gate.php",
+            "severity": "medium",
+            "type": "proxy"
+        },
+        {
+            "user": "mike",
+            "url": "http://strange-domain.xyz/gate.php",
+            "severity": "medium",
+            "type": "proxy"
+        },
+        {
+            "user": "mike",
+            "url": "http://strange-domain.xyz/upload",
+            "severity": "medium",
+            "type": "proxy"
+        },
+        {
+            "user": "mike",
+            "url": "http://strange-domain.xyz/upload",
+            "severity": "medium",
+            "type": "proxy"
+        },
+        {
+            "user": "john",
+            "url": "http://phishing-login.com/secure/account",
+            "severity": "low",
+            "type": "proxy"
+        },
+        {
+            "user": "john",
+            "url": "http://phishing-login.com/secure/account",
+            "severity": "low",
+            "type": "proxy"
+        },
+        {
+            "user": "john",
+            "url": "http://phishing-login.com/secure/verify",
+            "severity": "low",
+            "type": "proxy"
+        }
+    ]
+}
